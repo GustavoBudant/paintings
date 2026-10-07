@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #252122;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Paleta "Paintings" (tema claro + cabeçalho escuro) */
+  --color-paintings-ink: #252122;
+  --color-paintings-header: #252122;
+  --color-paintings-bg: #f7f7f7;
+  --color-paintings-card: #ffffff;
+  --color-paintings-muted: #6b6b6b;
+  --color-paintings-accent: #2563eb;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Botão principal (Get Started) */
+.btn-primary {
+  display: inline-block;
+  border-radius: 0.5rem;
+  background: var(--color-paintings-accent);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Botão secundário (Learn More) */
+.btn-secondary {
+  display: inline-block;
+  border-radius: 0.5rem;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-paintings-ink);
+  border: 2px solid var(--color-paintings-ink);
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--color-paintings-ink);
+  color: #ffffff;
+}
+
+/* Imagens dentro de cards */
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
